@@ -22,7 +22,8 @@
 
 
 몽고DB
-admin / admin#5079
+- https://cloud.mongodb.com/v2#/org/5ed5f4c71db0d17b1cbb6938/projects
+- admin / admin#5079
 
 
     MongoClientURI uri = new MongoClientURI(
