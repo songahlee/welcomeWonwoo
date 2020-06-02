@@ -31,6 +31,9 @@
     MongoClient mongoClient = new MongoClient(uri);
     MongoDatabase database = mongoClient.getDatabase("test");
 
+
+The mongo Shell 접속 안내 페이지 
+- https://docs.mongodb.com/manual/mongo/#start-the-mongo-shell-and-connect-to-mongodb
  
 참고페이지
 
