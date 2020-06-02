@@ -23,7 +23,9 @@
 
 몽고DB
 - https://cloud.mongodb.com/v2#/org/5ed5f4c71db0d17b1cbb6938/projects
+- shell 접속 명령어  >  mongo "mongodb+srv://cluster0-x20ls.mongodb.net/test" --username admin   
 - admin / admin#5079
+- java example code
 
 
     MongoClientURI uri = new MongoClientURI(
@@ -35,13 +37,14 @@
 The mongo Shell 접속 안내 페이지 
 - https://docs.mongodb.com/manual/mongo/#start-the-mongo-shell-and-connect-to-mongodb
  
+
 참고페이지
 
 - 스프링부트 : https://goddaehee.tistory.com/238
 
 - 몽고DB : https://needjarvis.tistory.com/419
 
-- 몽고DB cloud : https://bit.ly/3gJJ4ui
+- 몽고DB cloud 가입방법 : https://bit.ly/3gJJ4ui
 
 
 
