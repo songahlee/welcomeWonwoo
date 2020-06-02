@@ -19,7 +19,26 @@
  - WelcomeApplication.java파일의 우측마우스 클릭 후 Run 'WelcomeApplication' 선택하면 실행됨. 
  - http://localhost:8000/  주소로 접속하면 index.html 내용 보임.
 
+
+
+몽고DB
+admin / admin#5079
+
+
+    MongoClientURI uri = new MongoClientURI(
+    "mongodb://admin:<password>@cluster0-shard-00-00-x20ls.mongodb.net:27017,cluster0-shard-00-01-x20ls.mongodb.net:27017,cluster0-shard-00-02-x20ls.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority");
+    MongoClient mongoClient = new MongoClient(uri);
+    MongoDatabase database = mongoClient.getDatabase("test");
+
  
 참고페이지
 
 - 스프링부트 : https://goddaehee.tistory.com/238
+
+- 몽고DB : https://needjarvis.tistory.com/419
+
+- 몽고DB cloud : https://bit.ly/3gJJ4ui
+
+
+
+
