@@ -1,27 +1,72 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+    <!--<meta charset="UTF-8">-->
+    <!--<title>First Project! </title>-->
+
+    <!--<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+    <!--<script>-->
+
+        <!--$.ajax({-->
+            <!--type: "GET",-->
+            <!--url: "/valueTest",-->
+            <!--success: (data) => {-->
+                <!--console.log(data);-->
+                <!--$('#contents').html(data);-->
+            <!--}-->
+        <!--});-->
+
+    <!--</script>-->
+<!--</head>-->
+<!--<body>-->
+    <!--<h1>Hello!!</h1>-->
+    <!--<div id="contents">-->
+        <!--contents??-->
+    <!--</div>-->
+<!--</body>-->
+<!--</html>-->
+
+
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>First Project! </title>
+<html lang="ko">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta charset="utf-8">
+        <title>한강 수질정보 </title>
+        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
 
-    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script>
+            // https://kamang-it.tistory.com/entry/RESTfulajaxjquery-ajax%EC%82%AC%EC%9A%A9%EB%B2%95-2 ajax 참고사이트
+            // http://data.seoul.go.kr/dataList/OA-15488/S/1/datasetView.do?tab=A   한강수질 알림이
 
-        $.ajax({
-            type: "GET",
-            url: "/valueTest",
-            success: (data) => {
+            $.ajax({
+                url: 'http://openapi.seoul.go.kr:8088/6e79545a5173736f3130357977535557/json/WPOSInformationTime/1/5/',
+                type: 'GET'
+
+            }).done(function(data, textStatus, jqXHR){
+                console.log('성공');
                 console.log(data);
-                $('#contents').html(data);
-            }
-        });
+                var result = data.WPOSInformationTime.row[0].W_TEMP;
+                var resultDiv = document.getElementById("temperature");
+                resultDiv.innerHTML = result;
 
-    </script>
-</head>
-<body>
-    <h1>Hello!!</h1>
-    <div id="contents">
-        contents??
-    </div>
-</body>
+            }).fail(function(jqXHR, textStatus, errorThrown){
+                console.log('실패');
+                console.log(jqXHR);
+                console.log(textStatus);
+                console.log(errorThrown);
+            });
+
+
+        </script>
+    </head>
+    <body>
+        <div>
+            한강 수질정보 보여주기
+        </div>
+        <div id="temperature">
+        </div>
+    </body>
 </html>
